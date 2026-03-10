@@ -36,9 +36,7 @@ repository = "https://github.com/sathya-s3/nomad-distro-template-test2"
 
 [project.optional-dependencies]
 # Add your plugins to the list below.
-plugins = [
- "nomad-north-jupyter>=0.2.1"
-  ]
+plugins = []
 jupyter = [
   "jupyter-events",
   "voila",
