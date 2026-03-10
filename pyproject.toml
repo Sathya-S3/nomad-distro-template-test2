@@ -20,7 +20,15 @@ dynamic = ["version"]
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-dependencies = ["nomad-lab[infrastructure]>=1.4.1"]
+dependencies = [
+  "nomad-lab[infrastructure]>=1.4.1",
+  "setuptools",
+  "nomad-schema-plugin-run>=1.0.1",
+  "nomad-parser-plugins-electronic>=1.0",
+  "nomad-parser-plugins-atomistic>=1.0.6",
+  "ccpnc-oasis-app @ git+https://github.com/CCP-NC/ccpnc-oasis-app.git@afa087841740930af46ed97f5ce1c49de380b7f7",
+  "nomad-oasis-schema-parser-plugin @ git+https://github.com/CCP-NC/nomad-oasis-schema-parser-plugin.git@9f5b1e87e82b5e6b83497c9968407b027883451f",
+]
 
 
 [project.urls]
@@ -31,7 +39,15 @@ repository = "https://github.com/sathya-s3/nomad-distro-template-test2"
 plugins = [
  "nomad-north-jupyter>=0.2.1"
   ]
-jupyter = ["jupyter-events"]
+jupyter = [
+  "jupyter-events",
+  "voila",
+  "ipyaggrid",
+  "ipysheet",
+  "ipydatagrid",
+  "jupyter-flex",
+  "pyOpenSSL",
+]
 gpu-action = []
 cpu-action = []
 
@@ -43,6 +59,10 @@ extra-index-url = [
 ]
 prerelease = "explicit"
 constraint-dependencies = ["flatdict>=4.1.0"]
+#remove override when final version is available
+override-dependencies = [
+  "nomad-nmr-schema @ git+https://github.com/FAIRmat-NFDI/nomad-schema-plugin-nmr.git@f799401d8981eb9080f18e26d524d8eb7535488e",
+]
 
 [tool.setuptools.packages.find]
 exclude = ["gui*", "docs*", "config*"]
